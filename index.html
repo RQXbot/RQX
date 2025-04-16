@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RQX-bot - APK Search</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      margin-top: 15%;
+      background: #f2f2f2;
+    }
+    input {
+      width: 60%;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>RQX-bot</h1>
+  <p>Cari game atau APK dari situs terpercaya</p>
+  <input type="text" id="searchBox" placeholder="Contoh: GTA V Mod">
+  <br>
+  <button onclick="search()">Cari Sekarang</button>
+
+  <script>
+    function search() {
+      const query = document.getElementById("searchBox").value;
+      const sites = [
+        "site:apkpure.com",
+        "site:modcombo.com",
+        "site:apkmirror.com",
+        "site:happymod.com",
+        "site:revdl.com"
+      ];
+      const searchURL = `https://www.google.com/search?q=${sites.join('+OR+')}+${encodeURIComponent(query)}`;
+      window.open(searchURL, '_blank');
+    }
+  </script>
+</body>
+</html>
